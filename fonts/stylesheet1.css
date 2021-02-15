@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Death to Metal';
+    src: url('../fonts/DeathtoMetal.woff2') format('woff2'),
+        url('../fonts/DeathtoMetal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

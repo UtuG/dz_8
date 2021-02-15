@@ -1,0 +1,533 @@
+@font-face {
+	font-family: "Death to Metal";
+	src: url("../fonts/DeathtoMetal.woff2") format("woff2"), url("../fonts/DeathtoMetal.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "progresspixel";
+	src: url("../fonts/progresspixel-bold.woff2") format("woff2"), url("../fonts/progresspixel-bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Overlorder";
+	src: url("../fonts/Overlorder.woff2") format("woff2"), url("../fonts/Overlorder.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* *******RESET****** */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	/* Теперь размеры блоков включают в себя поля и рамки.
+	Все отступы и рамки обнулены. */
+}
+li {
+	list-style: none;
+	/* Отмена стилизвции списков. */
+}
+a,
+a:visited {
+	text-decoration: none;
+	/* Обнуляет стилизацию посещенных ссылок. */
+}
+a:hover {
+	text-decoration: none;
+	/* Обнуляет стилизацию для ссылок, которая появляеться при наведении на них курсора. */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+	/* Значения будут унаследованы от родителя. */
+}
+img {
+	vertical-align: top;
+	/* Выравнивание верхнего края элемента по верху самого высокого элемента строки. */
+}
+body {
+	line-height: 1;
+	color: #ffffff;
+	font-size: 20px;
+	background-color: #000000;
+	font-family: "Overlorder";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+/* Высота линии, цвет текста, шрифт и его размер по умолчанию,  */
+/* *******RESET****** */
+
+.hover {
+	font-size: 700%;
+	text-transform: uppercase;
+	display: inline-block;
+	color: #ff000020;
+	text-align: center;
+	font-family: "Death to Metal";
+	margin: 0px 40%;
+}
+.hover:hover {
+	font-size: 700%;
+	text-transform: uppercase;
+	background: linear-gradient(45deg, rgba(255, 26, 0, 1) 33.3%, rgba(255, 25, 0, 0) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #ff0000;
+	display: inline-block;
+	font-family: "Death to Metal";
+}
+.hover:hover::after {
+	content: "";
+	background: rgba(255, 255, 255, 0) url(../img/torch.png) 0 0 no-repeat;
+	height: 64px;
+	width: 64px;
+	display: inline-block;
+	margin: 0px 0px 0px -80%;
+	filter: drop-shadow(10px 20px 30px orange);
+}
+
+.startButton {
+	max-width: 200px;
+	min-width: 200px;
+	color: white;
+	display: block;
+	margin: 2% auto;
+	background-color: #200000;
+	padding: 2%;
+	text-align: center;
+	border: 4px solid rgba(255, 26, 0, 1);
+	border-bottom: 8px solid rgba(255, 26, 0, 1);
+	font-family: "progresspixel";
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 120%;
+}
+
+.startButton:hover {
+	filter: drop-shadow(0px 0px 10px rgb(255, 0, 0));
+}
+.startButton:active {
+	box-shadow: inset -100px 100px 100px 100px black;
+	border: 8px solid rgba(255, 26, 0, 1);
+	border-bottom: 4px solid rgba(255, 26, 0, 1);
+	border-top: 2px solid rgba(255, 26, 0, 1);
+	font-size: 110%;
+}
+.startButton:focus {
+	outline: 2px solid darkred;
+}
+
+.c1img {
+	float: left;
+	width: 50%;
+	padding-right: 15px;
+}
+
+.clear {
+	clear: both;
+}
+.chapter::first-letter {
+	font-size: 250%;
+}
+
+.chapter {
+	margin-top: 25%;
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+	font-size: 400%;
+	border: 3px solid #ff0000;
+	display: none;
+}
+.chapter:target {
+	display: inline-block;
+}
+
+.chapter::first-letter {
+	font-size: 150%;
+	color: #ff0000;
+}
+#target1 {
+	background-image: url(../img/header.jpg);
+	background-size: cover;
+}
+.quit,
+.continue {
+	max-width: 10%;
+
+	color: white;
+
+	margin: 2% auto;
+	background-color: #200000;
+	padding: 10px;
+	text-align: middle;
+	border: 2px solid rgba(255, 26, 0, 1);
+	border-bottom: 4px solid rgba(255, 26, 0, 1);
+
+	font-family: "progresspixel";
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 25%;
+	display: inline-block;
+}
+
+.continue {
+	margin: 0.1% 0% 0.1% 75%;
+}
+.quit:hover,
+.continue:hover {
+	filter: drop-shadow(0px 0px 10px rgb(255, 0, 0));
+}
+.quit:active,
+.continue:active {
+	box-shadow: inset -100px 100px 100px 100px black;
+	border: 4px solid rgba(255, 26, 0, 1);
+	border-bottom: 2px solid rgba(255, 26, 0, 1);
+	border-top: 1px solid rgba(255, 26, 0, 1);
+
+	font-size: 20%;
+}
+.quit:focus,
+.continue:focus {
+	outline: 2px solid darkred;
+}
+
+#target2 {
+	background: url(../img/header.jpg) 0 0 / cover no-repeat;
+}
+
+#target3 {
+	background: url(../img/header.jpg) 0 0 / cover no-repeat;
+}
+.c2img {
+	margin-left: 5%;
+	margin-top: 5%;
+}
+
+.gates {
+	cursor: grab;
+}
+
+.c3img {
+	width: 25%;
+	margin-left: 30%;
+	cursor: grab;
+}
+.cell {
+	width: 5%;
+	cursor: grabbing;
+	margin-left: -13%;
+	opacity: 0;
+	display: inline-block;
+}
+
+.broken {
+	width: 25%;
+	margin-right: 37%;
+	cursor: grab;
+	float: right;
+}
+
+.c3imgBroken {
+	width: 25%;
+	margin-left: 38%;
+	cursor: grab;
+}
+
+#target7 *:first-child {
+	color: blueviolet;
+}
+
+#target7 span:first-of-type {
+	color: #ff0000;
+}
+
+#target8 {
+	background: url(/img/zoomedcell.png) bottom / 100% 100% no-repeat;
+	cursor: grab;
+}
+
+.hide {
+	width: 20%;
+
+	margin: 0px 40%;
+	visibility: hidden;
+}
+.a_hide:hover .hide {
+	visibility: visible;
+	cursor: grabbing;
+}
+
+.six {
+	width: 100%;
+	font-size: 700%;
+	text-transform: uppercase;
+
+	background: linear-gradient(45deg, rgba(255, 26, 0, 1) 33.3%, rgba(255, 25, 0, 0) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
+	font-family: "Death to Metal";
+}
+#target9 span:first-of-type {
+	font-size: 150%;
+	color: blueviolet;
+}
+
+#target9 span:last-of-type {
+	font-size: 150%;
+	color: #ff0000;
+}
+
+.lom {
+	width: 30%;
+	visibility: hidden;
+}
+
+.a_lom:hover .lom {
+	visibility: visible;
+	cursor: grabbing;
+}
+
+#target10 {
+	background: url(/img/z1.png) 0 0 / 40px 100% no-repeat, url(/img/z2.png) top / 40px 100% no-repeat,
+		url(/img/z2.png) right / 40px 100% no-repeat, url(/img/z4.png) top / 100% 40px no-repeat,
+		url(/img/dark_lom.png) 2.2% 15% / 30% no-repeat, url(/img/floor.png) 0 0 / cover no-repeat;
+	cursor: grab;
+}
+
+#target11 {
+	background-image: url(../img/header.jpg);
+	background-size: cover;
+}
+
+.exit {
+	cursor: grab;
+}
+
+.broken_exit {
+	margin-top: 10%;
+	margin-right: 10%;
+}
+
+.broken_exit1 {
+	display: block;
+	margin: 0px auto;
+	border: 4px solid #a1a1a1;
+}
+
+.broken_exit1:active {
+	filter: drop-shadow(0px 0px 10px rgb(255, 0, 0));
+}
+
+#target16,
+#target17,
+#target_L1,
+#target_L2,
+#target_L3,
+#target_pick1,
+#target_unreal_center,
+#target_unrealBD,
+#target_BD,
+#target_GT,
+#target_realGT,
+#target_GD1,
+#target_GD2,
+#target_GD3,
+#target_GD4,
+#target_real_center,
+#target_items2,
+#target_wall,
+#target_real_center1,
+#target_realBD {
+	background-image: url(../img/lvl2.jpg);
+	background-size: cover;
+}
+
+#target_unrealBD1,
+#target_unrealBD2,
+#target_unrealBD3,
+#target_round1,
+#target_round2,
+#target_round3,
+#target_round4 {
+	background-image: url(../img/lvl3.jpg);
+	background-size: cover;
+}
+
+#target_realBD1,
+#target_realBD2,
+#target_realBD3,
+#target_rround1,
+#target_rround2,
+#target_rround3,
+#target_rround4 {
+	background-image: url(../img/lvl3.jpg);
+	background-size: cover;
+}
+
+.level2 {
+	width: 50%;
+	height: 20%;
+	padding-right: 15px;
+	float: left;
+}
+
+#v1,
+#v2 {
+	margin: 0.1% 0% 0.1% 80%;
+}
+
+.bd {
+	padding-left: 15%;
+}
+
+#target_pick1 {
+	background: url(/img/key.png) 80% 40% / 15% no-repeat, url(/img/knife.png) 60% 40% / 15% no-repeat;
+}
+
+#target_unrealBD3,
+#target_round1,
+#target_round2,
+#target_round3 {
+	border: 30px solid red;
+}
+
+#target_unrealBD2::first-line {
+	color: red;
+	border: 30px solid red;
+}
+
+#target_realBD3,
+#target_rround1,
+#target_rround2,
+#target_rround3 {
+	border: 30px solid red;
+}
+
+#target_realBD2::first-line {
+	color: red;
+	border: 30px solid red;
+}
+.boss {
+	display: block;
+	margin: 0px auto;
+	cursor: crosshair;
+}
+
+.boss:active {
+	filter: drop-shadow(0px 0px 10px rgb(255, 0, 0));
+}
+.left:active,
+.a_hide:active,
+#target_round1 .continue:active,
+#target_round3 .continue:active,
+#target_rround1 .continue:active {
+	box-shadow: 0px 0px 10px 10000px red;
+}
+
+.gd {
+	display: block;
+	margin: 0px auto;
+	cursor: crosshair;
+}
+
+.gd:active {
+	filter: drop-shadow(0px 0px 10px rgb(255, 0, 0));
+}
+
+.gt {
+	padding-right: 15px;
+	max-width: 50%;
+	float: left;
+}
+
+.gtBig {
+	padding-right: 15px;
+	max-width: 100%;
+	float: top;
+}
+
+#target_items2 {
+	background: url(/img/melee.png) 80% 40% / 15% no-repeat, url(/img/map.png) 75% 40% / 10% no-repeat;
+}
+
+#target_map {
+	width: 800px;
+	height: 800px;
+	background: url(/img/map.png) 0 0 / 100% 100% no-repeat;
+}
+
+.mapping {
+	background-color: #ff0000;
+	display: inline-block;
+	opacity: 0;
+	position: absolute;
+}
+.mapping:hover {
+	opacity: 1;
+}
+
+#one {
+	width: 8px;
+	height: 100px;
+	bottom: -570px;
+	left: 400px;
+}
+
+#two {
+	width: 60px;
+	height: 8px;
+	bottom: -570px;
+	left: 400px;
+}
+
+#three {
+	width: 8px;
+	height: 12px;
+	bottom: -564px;
+	left: 455px;
+}
+
+#four {
+	width: 115px;
+	height: 8px;
+	bottom: -560px;
+	left: 460px;
+}
+
+#five {
+	width: 8px;
+	height: 190px;
+	bottom: -750px;
+	left: 568px;
+}
+
+#six6 {
+	width: 80px;
+	height: 80px;
+	bottom: -830px;
+	left: 530px;
+	border-radius: 50%;
+}
